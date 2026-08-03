@@ -171,6 +171,7 @@ body{
 
 .hero{
     text-align:center;
+     background:#5fbcde;
     padding:120px 20px;
 }
 
@@ -185,7 +186,7 @@ body{
 }
 
 .btn{
-    background:#5fbcde;
+   
     color:white;
     padding:14px 30px;
     border-radius:8px;
