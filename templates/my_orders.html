@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1 class="page-title">📦 My Orders</h1>
+
+    {% if orders %}
+
+        {% for order in orders %}
+
+        <div class="order-card">
+
+            <div class="order-header">
+
+                <h2>Order #{{ order.id }}</h2>
+
+                {% if order.status == "Pending" %}
+                    <span class="status pending">Pending</span>
+
+                {% elif order.status == "Processing" %}
+                    <span class="status processing">Processing</span>
+
+                {% elif order.status == "Shipped" %}
+                    <span class="status shipped">Shipped</span>
+
+                {% elif order.status == "Delivered" %}
+                    <span class="status delivered">Delivered</span>
+
+                {% else %}
+                    <span class="status cancelled">Cancelled</span>
+                {% endif %}
+
+            </div>
+
+            <div class="order-body">
+
+                <div class="order-left">
+
+                    <p><strong>👤 Customer</strong><br>{{ order.customer_name }}</p>
+
+                    <p><strong>📞 Phone</strong><br>{{ order.phone }}</p>
+
+                    <p><strong>📍 Address</strong><br>{{ order.address }}</p>
+
+                </div>
+
+                <div class="order-right">
+
+                    <p>
+                        <strong>💳 Payment</strong><br>
+
+                        {% if order.payment_method == "Cash on Delivery" %}
+                            💵 Cash on Delivery
+                        {% else %}
+                            💳 Online Payment
+                        {% endif %}
+
+                    </p>
+
+                    <p>
+                        <strong>💰 Total</strong><br>
+                        ₹{{ order.total_price }}
+                    </p>
+
+                    <p>
+                        <strong>🕒 Ordered On</strong><br>
+                        {{ order.created_at|date:"d M Y, h:i A" }}
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="order-footer">
+
+                <a href="{% url 'order_detail' order.id %}">
+                    <button class="view-btn">
+                        👁 View Details
+                    </button>
+                </a>
+
+                {% if order.status == "Pending" %}
+
+                <a href="#">
+                    <button class="cancel-btn">
+                        ❌ Cancel Order
+                    </button>
+                </a>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <div class="empty-orders">
+
+            <h2>No Orders Yet</h2>
+
+            <p>Looks like you haven't placed any orders.</p>
+
+            <a href="/products/">
+                <button class="shop-btn">
+                    🛍 Start Shopping
+                </button>
+            </a>
+
+        </div>
+
+    {% endif %}
+      
+</div>
+
+{% endblock %}

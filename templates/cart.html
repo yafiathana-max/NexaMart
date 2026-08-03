@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="page-header">
+        <h1>🛒 Shopping Cart</h1>
+        <p>Review your items before checkout.</p>
+    </div>
+
+    {% if items %}
+
+        {% for item in items %}
+
+        <div class="cart-card">
+
+            <div class="cart-image">
+             {% if item.product.image %}
+                   <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+             {% endif %}
+            </div>
+
+            <div class="cart-details">
+
+                <h2>{{ item.product.name }}</h2>
+
+                <p>{{ item.product.description }}</p>
+
+                <h3>₹{{ item.product.price }}</h3>
+
+                <p><strong>Quantity:</strong></p>
+
+                <div class="qty-buttons">
+
+                    <a href="/decrease-quantity/{{ item.id }}/">
+                        <button>-</button>
+                    </a>
+
+                    <span>{{ item.quantity }}</span>
+
+                    <a href="/increase-quantity/{{ item.id }}/">
+                        <button>+</button>
+                    </a>
+
+                </div>
+
+                <p class="subtotal">
+                    Subtotal:
+                    ₹{{ item.product.price|floatformat:2 }}
+                </p>
+
+            </div>
+
+            <div class="cart-actions">
+
+                <a href="/remove-from-cart/{{ item.id }}/">
+                    <button class="remove-btn">
+                        🗑 Remove
+                    </button>
+                </a>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+        <div class="cart-total">
+
+            <h2>Total : ₹{{ total }}</h2>
+
+            <a href="/checkout/">
+                <button class="checkout-btn">
+                    Proceed to Checkout →
+                </button>
+            </a>
+
+        </div>
+
+    {% else %}
+
+        <div class="empty-cart">
+
+            <h2>🛒 Your cart is empty.</h2>
+            <h2>Start shopping now!</h2>
+            <a href="/products/" class="btn">
+                Continue Shopping
+            </a>
+
+        </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

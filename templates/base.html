@@ -1,0 +1,115 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexaMart</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+     <nav class="navbar">
+
+    <div class="logo">
+        🛍 NexaMart
+    </div>
+
+    <!-- Hamburger Button -->
+    <div class="menu-toggle" id="menu-toggle">
+        ☰
+    </div>
+
+    <div class="nav-links" id="nav-links">
+
+        <a href="/">Home</a>
+
+        <a href="/products/">Products</a>
+
+        <a href="/wishlist/">❤️ Wishlist</a>
+
+        <a href="/cart/">Cart</a>
+
+        <a href="/my-orders/">My Orders</a>
+
+        <a href="/contact/">Contact</a>
+
+        <a href="/about/">About</a>
+
+        {% if user.is_authenticated %}
+
+            <a href="/account/">👤 Account</a>
+
+            <a href="/accounts/logout/">Logout</a>
+
+        {% else %}
+
+            <a href="/accounts/login/">Login</a>
+
+            <a href="/accounts/register/">Register</a>
+
+        {% endif %}
+
+    </div>
+
+</nav>
+    {% block content %}
+    {% endblock %}
+
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h2>NexaMart</h2>
+            <p>
+                Your trusted online shopping destination for quality products at the best prices.
+            </p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+
+            <a href="/">Home</a>
+            <a href="/products/">Products</a>
+            <a href="/wishlist/">Wishlist</a>
+            <a href="/my-orders/">My Orders</a>
+        </div>
+
+        <div class="footer-section">
+            <h3>Customer Support</h3>
+
+            <p>📧 support@nexamart.com</p>
+            <p>📞 +91 98765 43210</p>
+            <p>🕒 Mon - Sat (9 AM - 8 PM)</p>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p class="footer-bottom">
+        © 2026 NexaMart. All Rights Reserved.
+    </p>
+
+</footer>
+<script>
+
+        const menu = document.getElementById("menu-toggle");
+
+        const nav = document.getElementById("nav-links");
+
+        menu.addEventListener("click",function(){
+
+          nav.classList.toggle("active");
+
+});
+
+</script>
+</body>
+
+</html>

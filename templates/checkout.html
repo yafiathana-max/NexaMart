@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>Checkout</h1>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <hr>
+
+        <h3>🎁 Apply Coupon</h3>
+
+        <input
+            type="text"
+            name="coupon"
+            placeholder="Enter Coupon Code"
+            value="{{ coupon }}"
+        >
+
+        <br><br>
+
+<h3>💳 Payment Method</h3>
+
+<div class="payment-method">
+    <label class="payment-label">
+        <input
+            type="radio"
+            name="payment_method"
+            value="Cash on Delivery"
+            checked
+        >
+        <span>💵 Cash on Delivery</span>
+    </label>
+
+    <label class="payment-label">
+        <input
+            type="radio"
+            name="payment_method"
+            value="Online Payment"
+        >
+        <span>💳 Online Payment (Demo)</span>
+    </label>
+</div>
+
+<br><br>
+
+<input
+    type="text"
+    name="customer_name"
+    placeholder="Full Name"
+    required
+>
+
+        <br><br>
+
+        <input
+            type="text"
+            name="phone"
+            placeholder="Phone Number"
+            required
+        >
+
+        <br><br>
+
+        <textarea
+            name="address"
+            placeholder="Delivery Address"
+            required
+        ></textarea>
+
+        <br><br>
+
+        {% if discount %}
+            <p style="color:green; font-weight:bold;">
+                🎉 Discount Applied: ₹{{ discount }}
+            </p>
+        {% endif %}
+
+        <h2>Total : ₹{{ total }}</h2>
+
+        <br>
+
+        <button type="submit">
+            Place Order
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

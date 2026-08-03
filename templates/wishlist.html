@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+   <div class="page-header">
+    <h1>❤️ My Wishlist</h1>
+    <p>Your favorite products saved for later.</p>
+</div>
+
+    {% if items %}
+
+        <div class="product-grid">
+
+            {% for item in items %}
+
+            <div class="product-card">
+
+                {% if item.product.image %}
+                    <img src="{{ item.product.image.url }}">
+                {% endif %}
+
+                <h3>{{ item.product.name }}</h3>
+
+                <h4>₹{{ item.product.price }}</h4>
+
+                <a href="/product/{{ item.product.id }}/">
+                    <button>
+                        View Product
+                    </button>
+                </a>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <h3>No products in wishlist.</h3>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

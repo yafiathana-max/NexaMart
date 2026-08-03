@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container" style="text-align:center; padding:60px;">
+
+    <h1 style="color:green;">
+        {{ message }}
+    </h1>
+
+    <h3>
+        Payment Method:
+        {{ payment_method }}
+    </h3>
+
+    <br>
+
+    <a href="/products/">
+        <button>Continue Shopping</button>
+    </a>
+
+</div>
+
+{% endblock %}

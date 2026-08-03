@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="product-detail">
+
+        <div class="detail-image">
+
+            {% if product.image %}
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            {% endif %}
+
+        </div>
+
+        <div class="detail-info">
+
+            <h1>{{ product.name }}</h1>
+
+            <h2>₹{{ product.price }}</h2>
+
+            {% if product.stock > 0 %}
+                <p class="stock">
+                    ✅ In Stock ({{ product.stock }})
+                </p>
+            {% else %}
+                <p class="out-stock">
+                    ❌ Out of Stock
+                </p>
+            {% endif %}
+
+            <p>{{ product.description }}</p>
+
+            <br>
+
+            {% if product.stock > 0 %}
+
+            <a href="/add-to-cart/{{ product.id }}/">
+                <button class="cart-btn">
+                    🛒 Add To Cart
+                </button>
+            </a>
+
+            {% endif %}
+
+            <a href="/add-to-wishlist/{{ product.id }}/">
+                <button class="wish-btn">
+                    ❤️ Wishlist
+                </button>
+            </a>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <h2>⭐ Customer Reviews</h2>
+
+    {% if reviews %}
+
+        {% for review in reviews %}
+
+        <div class="review-card">
+
+            <h3>{{ review.name }}</h3>
+
+            <p>⭐ {{ review.rating }}/5</p>
+
+            <p>{{ review.comment }}</p>
+
+            <small>{{ review.created_at }}</small>
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>No reviews yet.</p>
+
+    {% endif %}
+
+    <hr>
+
+    <h2>✍ Write a Review</h2>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+        >
+
+        <br><br>
+
+        <select name="rating" required>
+
+            <option value="">Select Rating</option>
+            <option value="5">⭐⭐⭐⭐⭐</option>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="3">⭐⭐⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="1">⭐</option>
+
+        </select>
+
+        <br><br>
+
+        <textarea
+            name="comment"
+            rows="5"
+            placeholder="Write your review..."
+            required
+        ></textarea>
+
+        <br><br>
+
+       <div class="review-btn-container">
+
+            <button type="submit" class="review-btn">
+
+                ⭐ Submit Review
+
+            </button>
+
+        </div>
+
+    </form>
+
+    <hr>
+
+    <h2>🛍 Related Products</h2>
+
+    <div class="product-grid">
+
+        {% for item in related_products %}
+
+        <div class="product-card">
+
+            {% if item.image %}
+                <img src="{{ item.image.url }}">
+            {% endif %}
+
+            <h3>{{ item.name }}</h3>
+
+            <h4>₹{{ item.price }}</h4>
+
+            <a href="/product/{{ item.id }}/">
+                <button class="view-btn">
+                    View Product
+                </button>
+            </a>
+
+        </div>
+
+        {% empty %}
+
+        <p>No related products found.</p>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}

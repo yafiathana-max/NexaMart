@@ -1,0 +1,280 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>🛍 Our Products</h1>
+
+    <!-- Search -->
+    <form method="GET" class="search-form">
+
+        <input
+            type="text"
+            name="search"
+            placeholder="Search products..."
+            value="{{ request.GET.search }}"
+        >
+
+        {% if request.GET.category %}
+            <input
+                type="hidden"
+                name="category"
+                value="{{ request.GET.category }}"
+            >
+        {% endif %}
+
+        {% if request.GET.sort %}
+            <input
+                type="hidden"
+                name="sort"
+                value="{{ request.GET.sort }}"
+            >
+        {% endif %}
+
+        <button type="submit">
+            🔍 Search
+        </button>
+
+    </form>
+
+    <br>
+
+    <!-- Category + Sort -->
+    <form method="GET" class="category-form">
+
+        {% if request.GET.search %}
+            <input
+                type="hidden"
+                name="search"
+                value="{{ request.GET.search }}"
+            >
+        {% endif %}
+
+        <select name="category">
+
+            <option value="">All Categories</option>
+
+            {% for category in categories %}
+
+                <option
+                    value="{{ category.id }}"
+                    {% if request.GET.category == category.id|stringformat:"s" %}
+                        selected
+                    {% endif %}
+                >
+                    {{ category.name }}
+                </option>
+
+            {% endfor %}
+
+        </select>
+
+        <select name="sort">
+
+            <option value="">Sort By</option>
+
+            <option
+                value="low"
+                {% if request.GET.sort == "low" %}
+                    selected
+                {% endif %}
+            >
+                💰 Price: Low → High
+            </option>
+
+            <option
+                value="high"
+                {% if request.GET.sort == "high" %}
+                    selected
+                {% endif %}
+            >
+                💰 Price: High → Low
+            </option>
+
+            <option
+                value="new"
+                {% if request.GET.sort == "new" %}
+                    selected
+                {% endif %}
+            >
+                🆕 Newest First
+            </option>
+
+        </select>
+
+        <button type="submit">
+            Apply
+        </button>
+
+    </form>
+
+    <br>
+
+    <div class="product-grid">
+
+            {% for product in products %}
+        
+        <div class="product-card">
+
+            {% if product.sold >= 10 %}
+            <span class="badge bestseller">
+            🔥 Best Seller
+            </span>
+            {% endif %}
+
+            {% if product.is_new %}
+                <span class="badge new">
+                  ✨ New
+                </span>
+            {% endif %}
+
+            {% if product.image %}
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            {% endif %}
+
+            <h3>
+                <a href="/product/{{ product.id }}/">
+                    {{ product.name }}
+                </a>
+            </h3>
+
+            <p>
+                 {{ product.description|truncatewords:12 }}
+            </p>
+
+                {% if product.discount > 0 %}
+               
+                <span class="discount-badge">
+                       {{ product.discount }}% OFF
+                </span>
+
+                 <p class="old-price">
+                        ₹{{ product.original_price }}
+                </p>
+            {% endif %}
+
+                <h3 class="price">
+                     ₹{{ product.price }}
+                </h3> 
+                
+
+                <p>
+                     🛍️ Sold: {{ product.sold }}
+                </p>
+
+          {% if product.average_rating %}
+
+        <div class="rating-box">
+
+          <span class="rating-score">
+        {{ product.average_rating|floatformat:1 }}
+              </span>
+
+           <span class="rating-stars">
+        ⭐⭐⭐⭐⭐
+           </span>
+
+            </div>
+
+            {% else %}
+
+            <div class="rating-box">
+
+            <span class="no-rating">
+        Be the first to review
+                </span>
+
+        </div>
+
+        {% endif %}
+
+            {% if product.stock > 0 %}
+                <p><strong>Stock:</strong> {{ product.stock }}</p>
+                
+                
+            {% else %}
+                <p style="color:red; font-weight:bold;">
+                    ❌ Out of Stock
+                </p>
+            {% endif %}
+
+            <div class="product-buttons">
+
+                <a href="/product/{{ product.id }}/">
+                    <button class="view-btn">
+                       🔍 View Details
+                    </button>
+                </a>
+
+                {% if product.stock > 0 %}
+
+                    <a href="/add-to-cart/{{ product.id }}/">
+                        <button class="cart-btn">
+                            🛒 Add to Cart
+                        </button>
+                    </a>
+
+                {% else %}
+
+                    <button
+                        class="cart-btn"
+                        disabled
+                        style="opacity:0.5; cursor:not-allowed;"
+                    >
+                        Out of Stock
+                    </button>
+
+                {% endif %}
+
+                <a href="/add-to-wishlist/{{ product.id }}/">
+                    <button class="wish-btn">
+                        ❤️
+                    </button>
+                </a>
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <p>No products available.</p>
+
+        {% endfor %}
+
+    </div>
+ <!-- Pagination -->
+
+<div class="pagination">
+
+    {% if products.has_previous %}
+
+        <a href="?page={{ products.previous_page_number }}
+        {% if request.GET.search %}&search={{ request.GET.search }}{% endif %}
+        {% if request.GET.category %}&category={{ request.GET.category }}{% endif %}
+        {% if request.GET.sort %}&sort={{ request.GET.sort }}{% endif %}">
+            ← Previous
+        </a>
+
+    {% endif %}
+
+    <span>
+        Page {{ products.number }} of {{ products.paginator.num_pages }}
+    </span>
+
+    {% if products.has_next %}
+
+        <a href="?page={{ products.next_page_number }}
+        {% if request.GET.search %}&search={{ request.GET.search }}{% endif %}
+        {% if request.GET.category %}&category={{ request.GET.category }}{% endif %}
+        {% if request.GET.sort %}&sort={{ request.GET.sort }}{% endif %}">
+            Next →
+        </a>
+
+    {% endif %}
+
+</div>
+</div>
+
+{% endblock %}

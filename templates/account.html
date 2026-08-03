@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="account-container">
+
+    <div class="account-card">
+
+        <h1>👤 My Profile</h1>
+
+        <div class="profile-info">
+
+            <div class="info-box">
+                <h4>Username</h4>
+                <p>{{ user.username }}</p>
+            </div>
+
+            <div class="info-box">
+                <h4>Email</h4>
+                <p>{{ user.email }}</p>
+            </div>
+
+        </div>
+
+        <div class="account-stats">
+
+            <div class="stat-card">
+                <span>📦</span>
+                <h2>{{ total_orders }}</h2>
+                <p>Total Orders</p>
+            </div>
+
+            <div class="stat-card">
+                <span>❤️</span>
+                <h2>{{ wishlist_count }}</h2>
+                <p>Wishlist</p>
+            </div>
+
+            <div class="stat-card">
+                <span>🛒</span>
+                <h2>{{ cart_count }}</h2>
+                <p>Cart Items</p>
+            </div>
+
+        </div>
+
+        <div class="account-actions">
+
+            <a href="/my-orders/" class="account-btn account-orders">
+    📦 My Orders
+</a>
+
+<a href="/wishlist/" class="account-btn account-wishlist">
+    ❤️ Wishlist
+</a>
+
+<a href="/accounts/logout/" class="account-btn account-logout">
+    🚪 Logout
+</a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

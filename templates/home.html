@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Welcome to <span>NexaMart</span>
+        </h1>
+
+        <p>
+            Shop the latest products with amazing discounts.
+        </p>
+
+        <a href="/products/">
+            <button class="shop-btn">
+                🛍 Shop Now
+            </button>
+        </a>
+
+    </div>
+
+</section>
+
+
+<div class="home-features">
+
+    <div class="feature-card">
+        🚚
+        <h3>Free Delivery</h3>
+        <p>On orders above ₹999</p>
+    </div>
+
+    <div class="feature-card">
+        🔒
+        <h3>Secure Payment</h3>
+        <p>100% Safe Checkout</p>
+    </div>
+
+    <div class="feature-card">
+        💯
+        <h3>Quality Products</h3>
+        <p>Trusted Brands</p>
+    </div>
+
+    <div class="feature-card">
+        🎁
+        <h3>Best Offers</h3>
+        <p>Exclusive Discounts</p>
+    </div>
+
+</div>   <!-- ✅ Close here -->
+
+<hr>
+
+<h2 class="section-title">
+    🔥 Best Sellers
+</h2>
+
+<div class="product-grid">
+
+{% for product in featured_products %}
+
+<div class="product-card">
+
+    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+
+    <h3>{{ product.name }}</h3>
+
+    <h4>₹{{ product.price }}</h4>
+
+    <a href="/product/{{ product.id }}/">
+        <button class="view-btn">
+            View Product
+        </button>
+    </a>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+<hr>
+
+<h2 class="section-title">
+    ✨ New Arrivals
+</h2>
+
+<div class="product-grid">
+
+{% for product in new_products %}
+
+<div class="product-card">
+
+    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+
+    <h3>{{ product.name }}</h3>
+
+    <h4>₹{{ product.price }}</h4>
+
+    <a href="/product/{{ product.id }}/">
+        <button class="view-btn">
+            View Product
+        </button>
+    </a>
+
+</div>
+
+{% endfor %}
+
+</div>
+{% endblock %}
