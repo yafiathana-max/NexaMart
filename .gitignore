@@ -2,10 +2,10 @@
 venv/
 
 # Database
-db.sqlite3
+# db.sqlite3
 
 # Media uploads
-media/
+# media/
 
 # Python cache
 __pycache__/
