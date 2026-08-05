@@ -54,11 +54,7 @@ urlpatterns = [
         name='decrease_quantity'
     ),
 
-    path(
-        'accounts/login/',
-        login_page,
-        name='login'
-    ),
+    
     path(
     'account/',
     account_page,
