@@ -1,0 +1,500 @@
+[
+{
+  "model": "products.category",
+  "pk": 1,
+  "fields": {
+    "name": "Electronics"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 2,
+  "fields": {
+    "name": "Fashion"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 3,
+  "fields": {
+    "name": "Books"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 4,
+  "fields": {
+    "name": "Accessories"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 5,
+  "fields": {
+    "name": "Footware"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 6,
+  "fields": {
+    "name": "Home Decor"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "name": "iPhone 16",
+    "description": "Latest Apple SmartPhone",
+    "original_price": "0.00",
+    "price": "79999.00",
+    "discount": 0,
+    "image": "products/th.jpg",
+    "stock": 19,
+    "sold": 0,
+    "created_at": "2026-08-01T14:15:11.720Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 2,
+  "fields": {
+    "category": 1,
+    "name": "Samsung S26",
+    "description": "Flagship Android Phone",
+    "original_price": "0.00",
+    "price": "69999.00",
+    "discount": 0,
+    "image": "products/OIP.jpg",
+    "stock": 15,
+    "sold": 0,
+    "created_at": "2026-08-01T14:15:11.720Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 3,
+  "fields": {
+    "category": 1,
+    "name": "Dell XPS Laptop",
+    "description": "High Performance Laptop",
+    "original_price": "0.00",
+    "price": "125000.00",
+    "discount": 0,
+    "image": "products/Tributo-Platinum-v2.jpg",
+    "stock": 10,
+    "sold": 0,
+    "created_at": "2026-08-01T14:15:11.720Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 4,
+  "fields": {
+    "category": 1,
+    "name": "AppleAirPods 4",
+    "description": "Wireless Earbuds, Bluetooth Headphones, Personalised Spatial Audio, Sweat and Water Resistant, USB-C Charging Case, H2 Chip, Up to 30 Hours of Battery Life, Effortless Setup for iPhone",
+    "original_price": "0.00",
+    "price": "11900.00",
+    "discount": 0,
+    "image": "products/61DvMw16ITL._AC_SL1500_.jpg",
+    "stock": 499,
+    "sold": 0,
+    "created_at": "2026-08-01T14:15:11.720Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 5,
+  "fields": {
+    "category": 1,
+    "name": "Noise Pro 6 Max Smart Watch",
+    "description": "Intelligent with Noise AI, Endless AI Watch Faces, AI Companion, 1.96” AMOLED, Stainless Steel Build, Built-in GPS, 5 ATM, EN2 Processor, for iOS & Android(Chrome Black)",
+    "original_price": "0.00",
+    "price": "7999.00",
+    "discount": 0,
+    "image": "products/CHo5S4WB.jpg",
+    "stock": 399,
+    "sold": 0,
+    "created_at": "2026-08-01T14:15:11.720Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 6,
+  "fields": {
+    "category": 1,
+    "name": "ECOVACS DEEBOT N30 Plus White 2 in 1 Robot Vacuum & Mop",
+    "description": "New Launch, Bagless Eco-Friendly Multi-Cyclone Auto Empty Station, 10000 Pa Suction, 5200mAh Battery, Covers 3500+sq ft, Zero Tangle 2.0",
+    "original_price": "0.00",
+    "price": "32998.00",
+    "discount": 0,
+    "image": "products/ecovacs-deebot-n30-plus-white-2-in-1-robot-vacuum--o-1bNomeJ8.jpg",
+    "stock": 450,
+    "sold": 0,
+    "created_at": "2026-08-01T14:15:11.720Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 7,
+  "fields": {
+    "category": 1,
+    "name": "boAt Nirvana Wireless Bluetooth Headphones",
+    "description": "boAt Nirvana Eutopia 2 ANC, (~45dB) Adaptive Hybrid ANC, 80H Playtime, 3D Spatial Audio, Dual Drivers, Hi-Res Ldac, ASAP™ Charge, AI-ENx™ and Adaptive Fit Wireless Bluetooth Headphones (Utopian White)",
+    "original_price": "0.00",
+    "price": "5999.00",
+    "discount": 0,
+    "image": "products/61PCjNryx2L._SX679_.jpg",
+    "stock": 350,
+    "sold": 0,
+    "created_at": "2026-08-01T14:15:11.720Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 8,
+  "fields": {
+    "category": 1,
+    "name": "Durafit91™ RELAXA Rechargeable Scalp Massager",
+    "description": "Oil Massager for Hair Growth | 96-Kneading Points Soft Medical-Grade Silicone Bristles | Detachable, Waterproof | Red Light Therapy for Stress Relief & Deep Relaxation",
+    "original_price": "0.00",
+    "price": "899.00",
+    "discount": 0,
+    "image": "products/41x-yt5TznL._SY300_SX300_QL70_ML2_.jpg",
+    "stock": 400,
+    "sold": 0,
+    "created_at": "2026-08-01T14:15:11.720Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 9,
+  "fields": {
+    "category": 3,
+    "name": "The Psychology of Success: includes Bestsellers",
+    "description": "The Psychology of Success: includes Bestsellers Think and Grow Rich and The Law of Success by author Napoleon Hill -Training the Mind for Wealth and ... Psychology | Self-Improvement | Leadership",
+    "original_price": "0.00",
+    "price": "523.00",
+    "discount": 0,
+    "image": "products/61BAL9IXP5L._SL1200.webp",
+    "stock": 400,
+    "sold": 0,
+    "created_at": "2026-08-01T14:15:11.720Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 10,
+  "fields": {
+    "category": 3,
+    "name": "The Power of Your Subconscious Mind",
+    "description": "The Power of Your Subconscious Mind | Dr. Joseph Murphy Books | A Self-Help English Book | Rework the Secret Laws | How to Win Psychology",
+    "original_price": "0.00",
+    "price": "158.00",
+    "discount": 0,
+    "image": "products/61WMgOHyDaL.jpg",
+    "stock": 900,
+    "sold": 0,
+    "created_at": "2026-08-01T14:15:11.720Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 11,
+  "fields": {
+    "category": 3,
+    "name": "The Interpretation of Dreams",
+    "description": "The Interpretation of Dreams",
+    "original_price": "0.00",
+    "price": "239.00",
+    "discount": 0,
+    "image": "products/the-interpretation-of-dreams-1000x1000.jpg",
+    "stock": 700,
+    "sold": 0,
+    "created_at": "2026-08-01T14:15:11.720Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 12,
+  "fields": {
+    "category": 3,
+    "name": "Man and His Symbols",
+    "description": "“Straighforward to read and rich in suggestion.”—John Barkham, Saturday Review Syndicate\r\n\r\n“This book will be a resounding success for those who read it.”—Galveston News-Tribune\r\n\r\n“A magnificent achievement.”—Main Currents\r\n\r\n“Factual and revealing.”—Atlanta Times",
+    "original_price": "0.00",
+    "price": "514.00",
+    "discount": 0,
+    "image": "products/man_and_his_symbols_by_carl_g__1677597929_d6d2e03d_progressive.jpg",
+    "stock": 800,
+    "sold": 0,
+    "created_at": "2026-08-01T14:15:11.720Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 13,
+  "fields": {
+    "category": 4,
+    "name": "Necklace  with Extendable Chain",
+    "description": "MINUTIAE Love Heart Shape With Pink & White Diam Pendant Necklace for Girls And Women with Extendable Chain",
+    "original_price": "0.00",
+    "price": "436.00",
+    "discount": 0,
+    "image": "products/51BLrtmuaLL._SY395_.jpg",
+    "stock": 800,
+    "sold": 0,
+    "created_at": "2026-08-01T14:15:11.720Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 14,
+  "fields": {
+    "category": 4,
+    "name": "Bracelet for Women",
+    "description": "Nilu's Collection Infinity Shape Cubic Zirconia Diamond Bracelet for Women Jewelry for Gift, Adjustable Charm Bracelet",
+    "original_price": "0.00",
+    "price": "285.00",
+    "discount": 0,
+    "image": "products/51FoiQVzWWL._SX395_.jpg",
+    "stock": 899,
+    "sold": 1,
+    "created_at": "2026-08-01T14:15:11.720Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 15,
+  "fields": {
+    "category": 4,
+    "name": "Earring Stud",
+    "description": "GIVA 925 Silver Rose Gold Infinity Pendant Necklace Ring Stud Earrings Toe Rings Anklet Bracelet Sets | Gifts for Women & Girls",
+    "original_price": "0.00",
+    "price": "1648.00",
+    "discount": 0,
+    "image": "products/41oKb8cqOuL._SY395_.jpg",
+    "stock": 600,
+    "sold": 0,
+    "created_at": "2026-08-01T14:15:11.720Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 16,
+  "fields": {
+    "category": 4,
+    "name": "GIVA 925 Silver Embrace Leaf Ring",
+    "description": "GIVA 925 Silver Embrace Leaf Ring, Adjustable | Gifts for Girlfriend, Gifts for Women and Girls | With Certificate of Authenticity and 925 Stamp",
+    "original_price": "0.00",
+    "price": "1348.00",
+    "discount": 0,
+    "image": "products/61KYD4LMQyL._SY395_.jpg",
+    "stock": 299,
+    "sold": 1,
+    "created_at": "2026-08-01T14:15:11.720Z"
+  }
+},
+{
+  "model": "products.review",
+  "pk": 1,
+  "fields": {
+    "product": 1,
+    "name": "Thana Yafia",
+    "rating": 5,
+    "comment": "Good quality of camera.",
+    "created_at": "2026-07-21T14:51:57.454Z"
+  }
+},
+{
+  "model": "products.review",
+  "pk": 2,
+  "fields": {
+    "product": 2,
+    "name": "Anaya",
+    "rating": 4,
+    "comment": "Good features",
+    "created_at": "2026-07-21T14:52:38.954Z"
+  }
+},
+{
+  "model": "products.review",
+  "pk": 3,
+  "fields": {
+    "product": 3,
+    "name": "Safa",
+    "rating": 4,
+    "comment": "excellent",
+    "created_at": "2026-07-21T14:53:17.078Z"
+  }
+},
+{
+  "model": "products.review",
+  "pk": 4,
+  "fields": {
+    "product": 4,
+    "name": "Siddu",
+    "rating": 5,
+    "comment": "amazing quality of noise cancellation.",
+    "created_at": "2026-07-21T14:54:29.138Z"
+  }
+},
+{
+  "model": "products.review",
+  "pk": 5,
+  "fields": {
+    "product": 5,
+    "name": "Harshath",
+    "rating": 5,
+    "comment": "Looking gorgeous, Good features.",
+    "created_at": "2026-07-21T14:55:35.000Z"
+  }
+},
+{
+  "model": "products.review",
+  "pk": 6,
+  "fields": {
+    "product": 6,
+    "name": "Arun",
+    "rating": 5,
+    "comment": "Efficient to use, Convinent for every place.",
+    "created_at": "2026-07-21T14:57:13.474Z"
+  }
+},
+{
+  "model": "products.review",
+  "pk": 7,
+  "fields": {
+    "product": 7,
+    "name": "Sherif",
+    "rating": 4,
+    "comment": "Perfect fit.",
+    "created_at": "2026-07-21T14:58:43.147Z"
+  }
+},
+{
+  "model": "products.review",
+  "pk": 8,
+  "fields": {
+    "product": 8,
+    "name": "Aishwarya",
+    "rating": 5,
+    "comment": "It helps to reduce stress.",
+    "created_at": "2026-07-21T14:59:50.370Z"
+  }
+},
+{
+  "model": "products.review",
+  "pk": 9,
+  "fields": {
+    "product": 9,
+    "name": "Reena",
+    "rating": 5,
+    "comment": "Amazing book.",
+    "created_at": "2026-07-21T15:00:32.900Z"
+  }
+},
+{
+  "model": "products.review",
+  "pk": 10,
+  "fields": {
+    "product": 10,
+    "name": "Arjun",
+    "rating": 4,
+    "comment": "Very inspiring.",
+    "created_at": "2026-07-21T15:01:22.421Z"
+  }
+},
+{
+  "model": "products.review",
+  "pk": 11,
+  "fields": {
+    "product": 11,
+    "name": "Radhi",
+    "rating": 4,
+    "comment": "Fabulous",
+    "created_at": "2026-07-21T15:01:50.403Z"
+  }
+},
+{
+  "model": "products.review",
+  "pk": 12,
+  "fields": {
+    "product": 12,
+    "name": "Fayas",
+    "rating": 5,
+    "comment": "Interesting",
+    "created_at": "2026-07-21T15:02:43.842Z"
+  }
+},
+{
+  "model": "products.review",
+  "pk": 13,
+  "fields": {
+    "product": 13,
+    "name": "Nisha",
+    "rating": 4,
+    "comment": "Looking nice",
+    "created_at": "2026-07-21T15:03:14.114Z"
+  }
+},
+{
+  "model": "products.review",
+  "pk": 14,
+  "fields": {
+    "product": 14,
+    "name": "Janu",
+    "rating": 5,
+    "comment": "Fabulous",
+    "created_at": "2026-07-21T15:04:06.957Z"
+  }
+},
+{
+  "model": "products.review",
+  "pk": 15,
+  "fields": {
+    "product": 15,
+    "name": "Pamina",
+    "rating": 4,
+    "comment": "Very amazing one.",
+    "created_at": "2026-07-21T15:04:54.422Z"
+  }
+},
+{
+  "model": "products.review",
+  "pk": 16,
+  "fields": {
+    "product": 16,
+    "name": "Ayra",
+    "rating": 5,
+    "comment": "Excellent ring",
+    "created_at": "2026-07-21T15:05:32.620Z"
+  }
+},
+{
+  "model": "products.coupon",
+  "pk": 1,
+  "fields": {
+    "code": "SAVE20",
+    "discount": 20
+  }
+},
+{
+  "model": "products.coupon",
+  "pk": 2,
+  "fields": {
+    "code": "FESTIVE30",
+    "discount": 30
+  }
+},
+{
+  "model": "products.coupon",
+  "pk": 3,
+  "fields": {
+    "code": "WELCOME10",
+    "discount": 10
+  }
+}
+]
