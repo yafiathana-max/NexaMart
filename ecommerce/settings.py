@@ -31,6 +31,7 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
     "nexamart-zyzw.onrender.com",
+    "nexamart-1-okzj.onrender.com",
 ]
 
 
