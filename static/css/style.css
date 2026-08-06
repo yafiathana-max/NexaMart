@@ -1457,70 +1457,27 @@ select{
    Responsive Navbar
 ========================== */
 
-.menu-toggle{
-
-    display:none;
-
-    font-size:32px;
-
-    color:white;
-
-    cursor:pointer;
-
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
 }
 
-@media (max-width:900px){
 
-    .navbar{
+@media (max-width: 768px) {
 
-        position:relative;
-
-        flex-wrap:wrap;
-
-        padding:18px 20px;
-
+    .menu-icon {
+        display: block;
     }
 
-    .menu-toggle{
-
-        display:block;
-
+    .nav-links {
+        display: none;
+        flex-direction: column;
     }
 
-    .nav-links{
-
-        display:none;
-
-        width:100%;
-
-        flex-direction:column;
-
-        margin-top:20px;
-
-        background:#1f2937;
-
-        border-radius:12px;
-
-        overflow:hidden;
-
+    .nav-links.active {
+        display: flex;
     }
-
-    .nav-links.active{
-
-        display:flex;
-
-    }
-
-    .nav-links a{
-
-        padding:16px;
-
-        text-align:center;
-
-        border-bottom:1px solid rgba(255,255,255,.08);
-
-    }
-
 }
 .price{
     color:#16a34a;
